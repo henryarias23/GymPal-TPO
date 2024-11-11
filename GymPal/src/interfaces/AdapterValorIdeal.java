@@ -1,5 +1,6 @@
 package interfaces;
 
-public interface AdapterValorIdeal {
-
+public interface AdacterValorIdeal {
+    double nivelMasaMuscular();
+    double porcentajeGrasaCorporal();
 }

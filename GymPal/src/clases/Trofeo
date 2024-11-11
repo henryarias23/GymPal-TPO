@@ -1,0 +1,25 @@
+package clases;
+
+import interfaces.Notificador;
+
+public abstract class Trofeo {
+    protected String nombre;
+    protected String descripcion;
+    protected Notificador notificador;
+
+    public Trofeo(String nombre, String descripcion, Notificador notificador) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.notificador = notificador;
+    }
+
+    public abstract boolean verificarCumplimiento(Socio socio);
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+}

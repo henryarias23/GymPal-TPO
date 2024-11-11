@@ -27,6 +27,17 @@ public class Socio {
         this.obs = new ArrayList<>();
     }
 
+    public String getSexo() {
+        return sexo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public double getAltura() {
+        return altura;
+    }
     public String obtenerDetalles() {
         String detalles = String.format("Nombre: %s, Edad: %d, Sexo: %s, Peso: %.2f kg, Altura: %.2f m, Objetivo: %s", 
                                          nombre, edad, sexo, peso, altura, (objetivo != null ? objetivo.getNombre() : "Sin objetivo"));
@@ -67,5 +78,16 @@ public class Socio {
             trofeosInfo.append(trofeo.getNombre()).append(", ");
         }
         logger.logearEvento(trofeosInfo.toString());
+    }
+
+    public void agregarTrofeo(Trofeo trofeo) {
+        trofeos.add(trofeo);
+        if (logger != null) {
+            logger.logearEvento("Trofeo obtenido: " + trofeo.getNombre());
+        }
+    }
+
+    public List<Trofeo> getTrofeos() {
+        return new ArrayList<>(trofeos); // Retornamos una copia para evitar modificaciones externas
     }
 }
