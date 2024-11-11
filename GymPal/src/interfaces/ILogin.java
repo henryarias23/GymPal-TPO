@@ -1,5 +1,5 @@
 package interfaces;
 
-public interface ILogger {
+public interface ILogin {
     void logearEvento(String mensaje);
 }
