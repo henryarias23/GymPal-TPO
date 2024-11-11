@@ -1,34 +1,37 @@
 package clases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Rutina {
-    public Socio socio;
-    public Objetivo objetivo;
-    public Entrenamiento entrenamiento;
-    public int duracion = 4;
+    private Objetivo objetivo;
+    private List<Entrenamiento> entrenamientos;
+    private int duracion = 4;
 
-    public Rutina(Socio socio, Objetivo objetivo, Entrenamiento entrenamiento) {
-        this.socio = socio;
+    public Rutina(Objetivo objetivo) {
         this.objetivo = objetivo;
-        this.entrenamiento = entrenamiento;
+        this.entrenamientos = new ArrayList<>();
     }
 
-    public void crearRutina() {
-        System.out.println("Rutina creada para el socio: " + socio.obtenerDetalles() +
-                           " con el objetivo: " + objetivo.getNombre() +
-                           ", duración de: " + duracion + " semanas" +
-                           " y entrenamiento asignado: " + entrenamiento.getDetalleEntrenamiento());
+    ppublic Rutina crearRutina() {
+        System.out.println("Rutina creada para el objetivo: " + objetivo);
+        return this;
     }
 
-    public void reforzarRutina(DecorarEjercicio decorador) {
-        for (Ejercicio ejercicio : entrenamiento.ejercicios) {
-            decorador.ejercicio = ejercicio;
-            decorador.cambiarValores();
-        }
-        System.out.println("Rutina reforzada aplicando cambios a los ejercicios.");
+    public void reforzarRutina(DecorarEjercicio cambiarValores) {
+        cambiarValores.aplicarCambios(entrenamientos);
+        System.out.println("Rutina reforzada.");
     }
 
-    public String obtenerProgreso() {
-        return "Progreso de la rutina: en curso.";
+    public void eliminarRutina() {
+        entrenamientos.clear();
+        System.out.println("Rutina eliminada.");
     }
+
+    public void agregarEntrenamiento(Entrenamiento entrenamiento) {
+        entrenamientos.add(entrenamiento);
+        System.out.println("Entrenamiento agregado a la rutina.");
+    }
+
 }
 

@@ -6,4 +6,8 @@ public class NivelExigenciaMuscular {
     public NivelExigenciaMuscular(Nivel nivel) {
         this.nivel = nivel;
     }
+public enum NivelExigenciaMuscular {
+    BAJO,
+    MEDIO,
+    ALTO
 }
