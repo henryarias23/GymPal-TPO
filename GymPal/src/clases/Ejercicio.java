@@ -1,27 +1,29 @@
 package clases;
 
-public class Ejercicio {
-    public String nombre;
-    public int series;
-    public double pesoAsignado;
-    public int repeticiones;
-    public String videoURL;
-    public NivelAerobico nivelAerobico;
-    public NivelExigenciaMuscular nivelExigenciaMuscular;
+import java.util.List;
 
-    public Ejercicio(String nombre, int series, double pesoAsignado, int repeticiones, String videoURL, NivelAerobico nivelAerobico, NivelExigenciaMuscular nivelExigenciaMuscular) {
+public class Ejercicio {
+    private String nombre;
+    private int series;
+    private double pesoAsignado;
+    private int repeticiones;
+    private String videoURL;
+    private NivelAerobico nivelAerobico;
+    private NivelExigenciaMuscular nivelExigenciaMuscular;
+
+   
+    public Ejercicio(String nombre, int series, double pesoAsignado, int repeticiones) {
         this.nombre = nombre;
         this.series = series;
         this.pesoAsignado = pesoAsignado;
         this.repeticiones = repeticiones;
-        this.videoURL = videoURL;
-        this.nivelAerobico = nivelAerobico;
-        this.nivelExigenciaMuscular = nivelExigenciaMuscular;
+       // this.nivelAerobico = nivelAerobico;
+        //this.nivelExigenciaMuscular = nivelExigenciaMuscular;
     }
-
-    public String obtenerDetalles() {
-        return "Ejercicio: " + nombre + ", Series: " + series + ", Peso asignado: " + pesoAsignado +
-               ", Repeticiones: " + repeticiones + ", Nivel aeróbico: " + nivelAerobico +
-               ", Exigencia muscular: " + nivelExigenciaMuscular + ", Video: " + videoURL;
+    
+    // Métodos para mostrar los detalles del ejercicio
+    public void mostrarEjercicio() {
+        System.out.println("Ejercicio: " + nombre);
+        System.out.println("Series: " + series + " | Repeticiones: " + repeticiones + " | PesoAsignado: " + pesoAsignado);
     }
 }

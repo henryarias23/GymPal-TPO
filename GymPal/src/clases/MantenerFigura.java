@@ -3,9 +3,15 @@ package clases;
 public class MantenerFigura extends Objetivo {
     private double pesoOsilante;
 
-    public MantenerFigura(String nombre, String descripcion, double pesoOsilante) {
-        super(nombre, descripcion);
-        this.pesoOsilante = pesoOsilante;
+    public MantenerFigura() {
+    	this.nombre = "Mantener Figura";
+        this.descripcion = "Este objetivo busca mantener el estado físico actual mediante ejercicio moderado.";
+    }
+
+    @Override
+    public void mostrarDescripcion() {
+        System.out.println("objetivo: "+nombre);
+        System.out.println(descripcion);
     }
 
     @Override

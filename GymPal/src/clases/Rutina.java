@@ -6,14 +6,15 @@ import java.util.List;
 public class Rutina {
     private Objetivo objetivo;
     private List<Entrenamiento> entrenamientos;
-    private int duracion = 4;
+    private int duracion;
 
-    public Rutina(Objetivo objetivo) {
-        this.objetivo = objetivo;
+    public Rutina(String string) {
+        this.objetivo = string;
         this.entrenamientos = new ArrayList<>();
+        this.duracion = 4;
     }
 
-    ppublic Rutina crearRutina() {
+    public Rutina crearRutina() {
         System.out.println("Rutina creada para el objetivo: " + objetivo);
         return this;
     }
@@ -31,6 +32,13 @@ public class Rutina {
     public void agregarEntrenamiento(Entrenamiento entrenamiento) {
         entrenamientos.add(entrenamiento);
         System.out.println("Entrenamiento agregado a la rutina.");
+    }
+    
+    public void mostrarRutina() {
+        System.out.println("\nRutina para el objetivo: " + objetivo);
+        for (Entrenamiento entrenamiento : entrenamientos) {
+            entrenamiento.mostrarEntrenamiento();
+        }
     }
 
 }

@@ -1,13 +1,20 @@
 package clases;
 
-public class Objetivo {
+public abstract class Objetivo {
     protected String nombre;
     protected String descripcion;
 
-    public Objetivo(String nombre, String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
+    public String getNombre() {
+        return nombre;
     }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+    // Método abstracto que debe ser implementado por las clases concretas
+    public abstract void mostrarDescripcion();
+    
+    public  abstract void  generarRutina();
 
     public boolean cumplirObjetivo(Socio socio) {
         System.out.println("Verificando cumplimiento del objetivo para el socio: " + socio.obtenerDetalles());
@@ -18,12 +25,6 @@ public class Objetivo {
         System.out.println("Sugerencia de cambio para el objetivo: " + nombre);
     }
 
-    public String getNombre() {
-        return nombre;
-    }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
 }
 

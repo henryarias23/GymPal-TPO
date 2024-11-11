@@ -1,11 +1,18 @@
 package clases;
 
 public class TonificarCuerpo extends Objetivo {
-    private AdacterValorIdeal adacter;
+   // private AdacterValorIdeal adacter;
+    
+    public TonificarCuerpo() {
+    	//this.adacter = adacter;
+    	this.nombre = "Tonificar Cuerpo";
+        this.descripcion = "Este objetivo se centra en mejorar la tonificación muscular con ejercicios de fuerza.";
+    }
 
-    public TonificarCuerpo(String nombre, String descripcion, AdacterValorIdeal adacter) {
-        super(nombre, descripcion);
-        this.adacter = adacter;
+    @Override
+    public void mostrarDescripcion() {
+        System.out.println("Objetivo: " +nombre);
+        System.out.println(descripcion);
     }
 
     @Override
