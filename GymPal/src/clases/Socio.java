@@ -1,13 +1,10 @@
 package clases;
-<<<<<<< HEAD
-import interfaces.ILogger;
 import java.util.ArrayList;
 import java.util.List;
-=======
+
 
 import interfaces.ILogin;
 import interfaces.SocioDAO;
->>>>>>> f8769c1419f66135154a19c6a9225e023fe6bae6
 
 public class Socio {
     private String nombre;
@@ -80,6 +77,5 @@ public class Socio {
     public String getSexo() {
         return sexo;
     }
->>>>>>> c44e8b677ec891fb0d9ec87a379ad3ea0c326db1
 }
 
