@@ -12,7 +12,7 @@ public class Ejercicio {
     private NivelExigenciaMuscular nivelExigenciaMuscular;
 
    
-    public Ejercicio(String nombre, int series, double pesoAsignado, int repeticiones) {
+    public Ejercicio(String nombre, int series, int repeticiones) {
         this.nombre = nombre;
         this.series = series;
         this.pesoAsignado = pesoAsignado;

@@ -19,7 +19,9 @@ public class Entrenamiento {
         //this.gruposMusculares = gruposMusculares;
     }
 
-   /* public void entrenamientoDetalle() {
+   /*  TENGO QUE MODIFICAR ESTO Y UNIFICARLO CON EL METODO MOSTRAR ENTRENAMIENTO QUE ESTA ABAJO
+    * 
+    * public void entrenamientoDetalle() {
         System.out.println("Entrenamiento asignado en días: " + dias);
         //System.out.println("Duración del entrenamiento: " + tiempo);
         //System.out.println("Grupo muscular principal: " + gruposMusculares);

@@ -5,8 +5,7 @@ public class TonificarCuerpo extends Objetivo {
     
     public TonificarCuerpo() {
     	//this.adacter = adacter;
-    	this.nombre = "Tonificar Cuerpo";
-        this.descripcion = "Este objetivo se centra en mejorar la tonificación muscular con ejercicios de fuerza.";
+    	super("Tonificar cuerpo", "Este objetivo se centra en mejorar la tonificación muscular con ejercicios de fuerza.");
     }
 
     @Override
@@ -15,6 +14,23 @@ public class TonificarCuerpo extends Objetivo {
         System.out.println(descripcion);
     }
 
+	@Override
+	public Rutina generarRutina() {
+        Rutina rutina = new Rutina(getDescripcion());
+
+        Entrenamiento fuerza = new Entrenamiento("Entrenamiento de fuerza", " dias entrenamineto");
+        fuerza.agregarEjercicio(new Ejercicio("Flexiones", 15, 4));
+        fuerza.agregarEjercicio(new Ejercicio("Sentadillas", 20, 4));
+        fuerza.agregarEjercicio(new Ejercicio("Peso muerto", 12, 3));
+
+        rutina.agregarEntrenamiento(fuerza);
+        return rutina;
+		
+	}
+    
+	/* --------------------------------------------------  HASTA ACA ESTA ECHO-----------------------------------------------------
+	 * 
+	 * 
     @Override
     public boolean cumplirObjetivo(Socio socio) {
         double nivelMasaMuscular = adacter.nivelMasaMuscular();
@@ -22,9 +38,7 @@ public class TonificarCuerpo extends Objetivo {
         return nivelMasaMuscular >= 75; 
     }
 
-    @Override
-    public void sugerirCambio(Socio socio) {
-        double nivelIdeal = 75;
-        System.out.println("Sugerencia de cambio: Para alcanzar el objetivo de tonificación, su nivel de masa muscular ideal es " + nivelIdeal + ".");
-    }
+
+	*/
+
 }

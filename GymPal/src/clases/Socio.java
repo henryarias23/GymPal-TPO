@@ -17,6 +17,7 @@ public class Socio {
     private Rutina rutina;
     private ILogin login;
     private SocioDAO socioDAO;
+    private Objetivo objetivoEntrenamiento;
 
     public Socio(String nombre, int edad, String sexo) {
         this.nombre = nombre;
@@ -28,6 +29,7 @@ public class Socio {
         this.socioDAO = socioDAO;
         this.trofeos = new ArrayList<>();
         this.obs = new ArrayList<>();
+        this.objetivoEntrenamiento = null;
     }
     
     // Métodos Getters y Setters
@@ -77,17 +79,14 @@ public class Socio {
 
     // Métodos de la clase
 
-    public void elegirObjetivo() {
-        try (Scanner scanner = new Scanner(System.in)) {
+    public void elegirObjetivo(Scanner scanner) {
+        /*try (Scanner scanner = new Scanner(System.in))*/ {
 			System.out.println("Elige un objetivo de entrenamiento:");
 			System.out.println("1. Bajar de peso");
 			System.out.println("2. Tonificar cuerpo");
 			System.out.println("3. Mantener figura");
 			System.out.print("Ingresa el número del objetivo: ");
 			int opcion = scanner.nextInt();
-			
-			scanner.close();
-
 			switch (opcion) {
 			    case 1:
 			        objetivo = new BajarDePeso();
@@ -109,8 +108,23 @@ public class Socio {
     public void setObjetivo(Objetivo objetivo) {
         this.objetivo = objetivo;
     }
+    
+    public Rutina iniciarRutina() {
+        if (this.objetivo != null) {
+            return this.objetivo.generarRutina();
+        } else {
+            System.out.println("No se ha seleccionado un objetivo de entrenamiento.");
+            return null;
+        }
+    }
 
-
+    public void cambiarObjetivo( Scanner scanner) {
+        System.out.println("Cambio de objetivo de entrenamiento:");
+        elegirObjetivo(scanner); // Reutilizamos el método elegirObjetivo
+        System.out.println("El objetivo ha sido cambiado a: " + objetivo.getDescripcion());
+    }
+//----------------------------------hasta aca funciona ---------------------------//
+    
     public void registrarPesaje(double nuevoPeso) {
         this.peso = nuevoPeso;
         System.out.println("Peso actualizado a: " + nuevoPeso + " kg");
@@ -132,21 +146,6 @@ public class Socio {
             System.out.println("DAO no configurado para registrar.");
         }
     }
-
-    public void cambiarObjetivo(Objetivo nuevoObjetivo) {
-        this.objetivo = nuevoObjetivo;
-    }
-
-    public void iniciarRutina() {
-        if (rutina != null) {
-            rutina.crearRutina();
-            System.out.println("Rutina iniciada.");
-        } else {
-            System.out.println("No hay rutina asignada.");
-        }
-    }
-
-
 
 
 }
