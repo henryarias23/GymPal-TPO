@@ -15,10 +15,18 @@ public class Entrenamiento {
         this.dias = dias;
         this.nombre = nombre;
         this.ejercicios = new ArrayList<>();
-      //this.tiempo = tiempo;
+      //this.tiempo = tiempo;  
         //this.gruposMusculares = gruposMusculares;
     }
 
+    public void agregarEjercicio(Ejercicio ejercicio) {
+        ejercicios.add(ejercicio);
+    }
+    
+    public List<Ejercicio> getEjercicios() {
+        return ejercicios;
+    }
+    
    /*  NO TOCAR !!!! TENGO QUE MODIFICAR ESTO Y UNIFICARLO CON EL METODO -- > mostrarEntrenamiento() QUE ESTA ABAJO
     * 
     * public void entrenamientoDetalle() {
@@ -39,14 +47,7 @@ public class Entrenamiento {
         }
     }
     
-    public void agregarEjercicio(Ejercicio ejercicio) {
-        ejercicios.add(ejercicio);
-    }
-    
+   // ---------------------------aca todo lo que esta funciona
 
-    
-    public List<Ejercicio> getEjercicios() {
-        return ejercicios;
-    }
 }
 

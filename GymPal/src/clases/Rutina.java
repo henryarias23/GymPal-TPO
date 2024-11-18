@@ -31,7 +31,6 @@ public class Rutina {
     
     // Método para mostrar los detalles de la rutina
     public void mostrarRutina() {
-       // System.out.println(/*"\nRutina para el objetivo: " +*/ objetivo);
         for (Entrenamiento entrenamiento : entrenamientos) {
             entrenamiento.mostrarEntrenamiento();
         }
