@@ -14,8 +14,8 @@ public class MantenerFigura extends Objetivo {
     }
     
     @Override
-    public Rutina generarRutina() {
-        Rutina rutina = new Rutina(getDescripcion());
+    public void generarRutina() {
+    	this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento mixto = new Entrenamiento("Entrenamiento mixto", " dias entrenamineto");
         mixto.agregarEjercicio(new Ejercicio("Ciclismo", 30, 2));
@@ -23,7 +23,6 @@ public class MantenerFigura extends Objetivo {
         mixto.agregarEjercicio(new Ejercicio("Abdominales", 20, 3));
 
         rutina.agregarEntrenamiento(mixto);
-        return rutina;
     }
 /*
  

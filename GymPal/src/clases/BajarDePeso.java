@@ -3,9 +3,7 @@ package clases;
 public class BajarDePeso extends Objetivo {
 
     public BajarDePeso() {
-    	super("Bajar de peso", "Este objetivo se centra en reducir el peso corporal mediante ejercicio.");
-   /* 	this.descripcion = "Este objetivo se centra en reducir el peso corporal mediante ejercicio.";
-    	this.nombre = " Bajar de peso"; */	
+    	super("Bajar de peso", "Este objetivo se centra en reducir el peso corporal mediante ejercicio.");	
     }
     
 	@Override
@@ -15,8 +13,8 @@ public class BajarDePeso extends Objetivo {
 	}
 	
 	@Override
-	public Rutina generarRutina() {
-        Rutina rutina = new Rutina(getDescripcion());
+	public void generarRutina() {
+		this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento cardio = new Entrenamiento("Cardio intenso", " dias entrenamineto");
         cardio.agregarEjercicio(new Ejercicio("Correr en cinta", 20, 3));
@@ -24,7 +22,7 @@ public class BajarDePeso extends Objetivo {
         cardio.agregarEjercicio(new Ejercicio("Jumping Jacks", 30, 3));
 
         rutina.agregarEntrenamiento(cardio);
-        return rutina;
+        
 		
 	}
 	

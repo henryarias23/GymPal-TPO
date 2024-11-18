@@ -15,8 +15,8 @@ public class TonificarCuerpo extends Objetivo {
     }
 
 	@Override
-	public Rutina generarRutina() {
-        Rutina rutina = new Rutina(getDescripcion());
+	public void generarRutina() {
+		this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento fuerza = new Entrenamiento("Entrenamiento de fuerza", " dias entrenamineto");
         fuerza.agregarEjercicio(new Ejercicio("Flexiones", 15, 4));
@@ -24,7 +24,6 @@ public class TonificarCuerpo extends Objetivo {
         fuerza.agregarEjercicio(new Ejercicio("Peso muerto", 12, 3));
 
         rutina.agregarEntrenamiento(fuerza);
-        return rutina;
 		
 	}
     

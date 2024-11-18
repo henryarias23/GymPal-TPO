@@ -16,7 +16,7 @@ public class Rutina {
 
     public void agregarEntrenamiento(Entrenamiento entrenamiento) {
         entrenamientos.add(entrenamiento);
-        System.out.println("Entrenamiento agregado a la rutina.");
+        //System.out.println("Entrenamiento agregado a la rutina.");
     }
     
     // Método para obtener la lista de entrenamientos
@@ -31,7 +31,7 @@ public class Rutina {
     
     // Método para mostrar los detalles de la rutina
     public void mostrarRutina() {
-        System.out.println("\nRutina para el objetivo: " + objetivo);
+       // System.out.println(/*"\nRutina para el objetivo: " +*/ objetivo);
         for (Entrenamiento entrenamiento : entrenamientos) {
             entrenamiento.mostrarEntrenamiento();
         }

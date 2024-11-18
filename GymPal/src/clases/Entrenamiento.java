@@ -19,7 +19,7 @@ public class Entrenamiento {
         //this.gruposMusculares = gruposMusculares;
     }
 
-   /*  TENGO QUE MODIFICAR ESTO Y UNIFICARLO CON EL METODO MOSTRAR ENTRENAMIENTO QUE ESTA ABAJO
+   /*  NO TOCAR !!!! TENGO QUE MODIFICAR ESTO Y UNIFICARLO CON EL METODO -- > mostrarEntrenamiento() QUE ESTA ABAJO
     * 
     * public void entrenamientoDetalle() {
         System.out.println("Entrenamiento asignado en días: " + dias);
@@ -32,16 +32,18 @@ public class Entrenamiento {
         }
     }*/
     
-    public void agregarEjercicio(Ejercicio ejercicio) {
-        ejercicios.add(ejercicio);
-    }
-    
     public void mostrarEntrenamiento() {
 		System.out.println("\nEntrenamiento: " + nombre);
         for (Ejercicio ejercicio : ejercicios) {
             ejercicio.mostrarEjercicio();
         }
     }
+    
+    public void agregarEjercicio(Ejercicio ejercicio) {
+        ejercicios.add(ejercicio);
+    }
+    
+
     
     public List<Ejercicio> getEjercicios() {
         return ejercicios;

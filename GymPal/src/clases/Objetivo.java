@@ -3,6 +3,7 @@ package clases;
 public abstract class Objetivo {
     protected String nombre;
     protected String descripcion;
+	protected Rutina rutina; 
     
     public Objetivo(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -16,13 +17,17 @@ public abstract class Objetivo {
         return descripcion;
     }
     
+    public Rutina getRutina() {
+        return rutina;
+    }
+    
     // Método abstracto
-    public  abstract Rutina  generarRutina();
+    public abstract void generarRutina();
     public abstract void mostrarDescripcion();
     
     //--------------------------------- HASTA ACA ESTA--------------------------------------------//
 
-   /*  ESTO ME FALTA TODABIA 
+   /*  ESTO ME FALTA TODAVIA 
     * 
     * 
     * public boolean cumplirObjetivo(Socio socio) {
