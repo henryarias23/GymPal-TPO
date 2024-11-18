@@ -1,7 +1,5 @@
 package clases;
 
-import java.util.List;
-
 public class Ejercicio {
     private String nombre;
     private int series;
@@ -21,9 +19,15 @@ public class Ejercicio {
         //this.nivelExigenciaMuscular = nivelExigenciaMuscular;
     }
     
+    // Método para obtener el nombre del ejercicio
+    public String getNombre() {
+        return nombre;
+    }
+
     // Métodos para mostrar los detalles del ejercicio
     public void mostrarEjercicio() {
         System.out.println("Ejercicio: " + nombre);
         System.out.println("Series: " + series + " | Repeticiones: " + repeticiones + " | PesoAsignado: " + pesoAsignado);
     }
+
 }

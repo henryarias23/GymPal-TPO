@@ -19,6 +19,16 @@ public class Entrenamiento {
         //this.gruposMusculares = gruposMusculares;
     }
 
+// Get del dia
+    public String getDias() {
+        return dias;
+    }
+
+// Get del nombre
+    public String getNombre() {
+        return nombre;
+    }
+
     public void agregarEjercicio(Ejercicio ejercicio) {
         ejercicios.add(ejercicio);
     }
