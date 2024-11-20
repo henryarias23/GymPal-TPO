@@ -1,6 +1,4 @@
-/interfaces/
-/clases/
-/implementaciones/
-/principal/
-/interfaces/
-/controladores/
+# ignorar binarios y compilados
+*.class 
+/bin/
+/build/
