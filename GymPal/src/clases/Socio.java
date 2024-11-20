@@ -117,7 +117,7 @@ public class Socio {
     public void setObjetivo(Objetivo objetivo) {
         this.objetivo = objetivo;
         
-        // Verificar si el objetivo no es null antes de generar la rutina
+        // Verificar si el objetivo no es null antes de generar la rutina.//
         if (this.objetivo != null) {
             this.objetivo.generarRutina(); // Genera la rutina del nuevo objetivo
             this.rutina = this.objetivo.getRutina(); // Asigna la rutina generada al atributo 'rutina' de Socio
