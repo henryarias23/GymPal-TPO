@@ -19,9 +19,9 @@ public class TonificarCuerpo extends Objetivo {
 		this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento fuerza = new Entrenamiento("Entrenamiento de fuerza", " dias entrenamineto");
-        fuerza.agregarEjercicio(new Ejercicio("Flexiones", 15, 4));
-        fuerza.agregarEjercicio(new Ejercicio("Sentadillas", 20, 4));
-        fuerza.agregarEjercicio(new Ejercicio("Peso muerto", 12, 3));
+        fuerza.agregarEjercicio(new Ejercicio("Flexiones", 15, 4, 2));
+        fuerza.agregarEjercicio(new Ejercicio("Sentadillas", 20, 4, 5));
+        fuerza.agregarEjercicio(new Ejercicio("Peso muerto", 12, 3, 1));
 
         rutina.agregarEntrenamiento(fuerza);
 		

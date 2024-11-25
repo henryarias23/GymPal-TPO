@@ -3,14 +3,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import implementaciones.LoginAdapter;
 import interfaces.ILogin;
 import interfaces.SocioDAO;
+/*
+import interfaces.ILogin;
+import interfaces.SocioDAO;
+*/
 
 public class Socio {
     private String nombre;
     private int edad;
     private String sexo;
     private double peso;
+    private String usuario;
+    private String contraseña;
     private Objetivo objetivo;
     private List<Trofeo> trofeos;
     private List<Trofeo> obs;
@@ -19,17 +26,20 @@ public class Socio {
     private SocioDAO socioDAO;
     private Objetivo objetivoEntrenamiento;
 
-    public Socio(String nombre, int edad, String sexo) {
+    public Socio(String nombre, int edad, String sexo, double peso, String usuario, String contraseña) {
         this.nombre = nombre;
         this.edad = edad;
         this.sexo = sexo;
         this.peso = peso;
+        this.usuario = usuario;
+        this.contraseña = contraseña;
         this.objetivo = null;
-        this.login = login;
+        this.rutina = null;
+        this.login = null;
         this.socioDAO = socioDAO;
         this.trofeos = new ArrayList<>();
         this.obs = new ArrayList<>();
-        this.objetivoEntrenamiento = null;
+        
     }
     
     // Métodos Getters y Setters
@@ -57,6 +67,41 @@ public class Socio {
         this.sexo = sexo;
     }
 
+    public double getPeso() {
+        return peso;
+    }
+    
+    public String getSexo() {
+        return sexo;
+    }
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    
+    }
+    
+    public Objetivo getObjetivo() { return objetivo; }
+    
+    public Rutina getRutina() { return this.rutina; }
+    
+    // Método para setear un objetivo manualmente
+    public void setObjetivo(Objetivo objetivo) {
+        this.objetivo = objetivo;
+        
+        // Verificar si el objetivo no es null antes de generar la rutina.....
+        if (this.objetivo != null) {
+            this.objetivo.generarRutina(); // Genera la rutina del nuevo objetivo
+            this.rutina = this.objetivo.getRutina(); // Asigna la rutina generada al atributo 'rutina' de Socio
+            System.out.println("\nRutina generada para este objetivo ");
+        } else {
+            System.out.println("No se ha asignado un objetivo válido, no se puede generar rutina.");
+        }
+    }
+
+    
     // Método para mostrar información de la persona
     public void mostrarInformacion() {
         System.out.println("\nNombre: " + nombre);
@@ -68,19 +113,11 @@ public class Socio {
             System.out.println("sin objetivo de entrenamiento.");
         }
     }
-    
-    public double getPeso() {
-        return peso;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
 
     // Métodos de la clase
 
     public void elegirObjetivo(Scanner scanner) {
-        System.out.println("Elige un objetivo de entrenamiento:");
+        System.out.println("\nElige un objetivo de entrenamiento:");
         System.out.println("1. Bajar de peso");
         System.out.println("2. Tonificar cuerpo");
         System.out.println("3. Mantener figura");
@@ -111,22 +148,6 @@ public class Socio {
             System.out.println("No se ha podido generar la rutina porque no se ha seleccionado un objetivo válido.");
         }
     }
-
-    
- // Método para setear un objetivo manualmente
-    public void setObjetivo(Objetivo objetivo) {
-        this.objetivo = objetivo;
-        
-        // Verificar si el objetivo no es null antes de generar la rutina.//
-        if (this.objetivo != null) {
-            this.objetivo.generarRutina(); // Genera la rutina del nuevo objetivo
-            this.rutina = this.objetivo.getRutina(); // Asigna la rutina generada al atributo 'rutina' de Socio
-            System.out.println("\nRutina generada para este objetivo ");
-        } else {
-            System.out.println("No se ha asignado un objetivo válido, no se puede generar rutina.");
-        }
-    }
-
     
     public void iniciarRutina() {
         if (this.objetivo != null) {
@@ -167,19 +188,12 @@ public class Socio {
     }
 
 //----------------------------------hasta aca funciona ---------------------------//
-    
+   /* 
     public void registrarPesaje(double nuevoPeso) {
         this.peso = nuevoPeso;
         System.out.println("Peso actualizado a: " + nuevoPeso + " kg");
     }
 
-    public void login(String user, String pass) {
-        if (login != null) {
-            login.login(user, pass);
-        } else {
-            System.out.println("Login no configurado.");
-        }
-    }
 
     public void registrar(SocioDTO socioDTO) {
         if (socioDAO != null) {
@@ -189,7 +203,7 @@ public class Socio {
             System.out.println("DAO no configurado para registrar.");
         }
     }
-
+*/
 
 }
 

@@ -19,35 +19,20 @@ public class Rutina {
         //System.out.println("Entrenamiento agregado a la rutina.");
     }
     
-    // Método para obtener la lista de entrenamientos
     public List<Entrenamiento> getEntrenamientos() {
         return entrenamientos;
     }
     
-    // Método para obtener el objetivo de la rutina
     public String getObjetivo() {
         return objetivo;
     }
     
-    // Método para mostrar los detalles de la rutina
     public void mostrarRutina() {
         for (Entrenamiento entrenamiento : entrenamientos) {
             entrenamiento.mostrarEntrenamiento();
         }
     }
-    
-   /* FALTA ESTO DE ABAJO HACERLO FUNCIONAR, LO DE ARRIBA ESTA ECHO
 
-
-    public void reforzarRutina(DecorarEjercicio cambiarValores) {
-        cambiarValores.aplicarCambios(entrenamientos);
-        System.out.println("Rutina reforzada.");
-    }
-
-    public void eliminarRutina() {
-        entrenamientos.clear();
-        System.out.println("Rutina eliminada.");
-    }*/
 
 }
 

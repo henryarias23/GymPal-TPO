@@ -17,9 +17,9 @@ public class BajarDePeso extends Objetivo {
 		this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento cardio = new Entrenamiento("Cardio intenso", " dias entrenamineto");
-        cardio.agregarEjercicio(new Ejercicio("Correr en cinta", 20, 3));
-        cardio.agregarEjercicio(new Ejercicio("Burpees", 15, 4));
-        cardio.agregarEjercicio(new Ejercicio("Jumping Jacks", 30, 3));
+        cardio.agregarEjercicio(new Ejercicio("Correr en cinta", 20, 3, 2));
+        cardio.agregarEjercicio(new Ejercicio("Burpees", 15, 4, 3));
+        cardio.agregarEjercicio(new Ejercicio("Jumping Jacks", 30, 3, 2.5));
 
         rutina.agregarEntrenamiento(cardio);
         

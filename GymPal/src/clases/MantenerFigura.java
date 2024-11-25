@@ -18,9 +18,9 @@ public class MantenerFigura extends Objetivo {
     	this.rutina = new Rutina(getDescripcion());
 
         Entrenamiento mixto = new Entrenamiento("Entrenamiento mixto", " dias entrenamineto");
-        mixto.agregarEjercicio(new Ejercicio("Ciclismo", 30, 2));
-        mixto.agregarEjercicio(new Ejercicio("Plancha", 60, 3));
-        mixto.agregarEjercicio(new Ejercicio("Abdominales", 20, 3));
+        mixto.agregarEjercicio(new Ejercicio("Ciclismo", 30, 2,1));
+        mixto.agregarEjercicio(new Ejercicio("Plancha", 60, 3,2));
+        mixto.agregarEjercicio(new Ejercicio("Abdominales", 20, 3, 4));
 
         rutina.agregarEntrenamiento(mixto);
     }

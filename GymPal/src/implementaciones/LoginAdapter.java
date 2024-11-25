@@ -1,12 +1,19 @@
-public class LoginAdapter {
+package implementaciones;
 
-    public void login(String user, String pass) {
-        // Aca iria logica de login
-        System.out.println("Intentando iniciar sesión con el usuario: " + user);
-        if (authenticate(user, pass)) {
-            System.out.println("Inicio de sesión exitoso para el usuario: " + user);
+import clases.Socio;
+import interfaces.ILogin;
+
+public class LoginAdapter implements ILogin {	
+
+    @Override
+    public void login(String usuario, String contraseña, Socio socio) {
+        
+        if (usuario.equals(socio.getUsuario()) && contraseña.equals(socio.getContraseña())) {
+            System.out.println("Inicio de sesión exitoso para el usuario: " + usuario);
         } else {
             System.out.println("Error de inicio de sesión: credenciales inválidas.");
         }
     }
+    
 }
+

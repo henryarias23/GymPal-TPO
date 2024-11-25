@@ -1,7 +1,8 @@
 package interfaces;
 
-public interface ILogin {
-    void logearEvento(String mensaje);
+import clases.Socio;
 
-	void login(String user, String pass);
+public interface ILogin {
+	
+	void login(String usuario, String contraseña, Socio socio);
 }

@@ -2,6 +2,9 @@ package principal;
 
 import clases.Socio;
 import clases.TonificarCuerpo;
+import controladores.EjercicioController;
+import controladores.RutinaController;
+import controladores.SocioController;
 
 import java.util.Scanner;
 
@@ -17,7 +20,7 @@ public class Main {
 
 //--------------------------------------ELEGIMOS UN OBJETIVO----------------------------------------------------------------------------//
 
-        /*
+       /*
         Socio socio1 = new Socio("Carlos", 27, "Masculino");
         socio1.elegirObjetivo(scanner);
         socio1.mostrarInformacion();
@@ -40,10 +43,33 @@ public class Main {
         socio3.mostrarInformacion();
         socio3.cambiarObjetivo(scanner);
         socio3.mostrarInformacion();
+       */
+         
+	
+	   SocioController socioController = new SocioController(scanner);
+	   RutinaController rutinaController = new RutinaController();
+	   EjercicioController ejercicioController = new EjercicioController();
+        
+
+        // Crear un nuevo socio
+        Socio nuevoSocio = socioController.crearSocio("Juan", 30, "Masculino", 75.5);
+        nuevoSocio.mostrarInformacion();
+        
+        socioController.loguearse(nuevoSocio);
        
-        */   
-		
-		 
+        nuevoSocio.elegirObjetivo(scanner);
+        nuevoSocio.mostrarInformacion();
+        nuevoSocio.mostrarRutina();
+        
+        rutinaController.reforzarRutina(nuevoSocio.getRutina());
+        
+        ejercicioController.registrarEjercicio(scanner, nuevoSocio.getRutina());
+        
+        ejercicioController.mostrarHistorial();
+        
+
+ 
+        
 
  
 	}

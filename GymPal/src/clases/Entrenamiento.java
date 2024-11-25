@@ -9,14 +9,12 @@ public class Entrenamiento {
     private String nombre;
    // private Time tiempo;
     private List<Ejercicio> ejercicios;
-    private IgruposMusculares gruposMusculares;
 
     public Entrenamiento(String nombre, String dias) {
         this.dias = dias;
         this.nombre = nombre;
         this.ejercicios = new ArrayList<>();
       //this.tiempo = tiempo;  
-        //this.gruposMusculares = gruposMusculares;
     }
 
 // Get del dia
